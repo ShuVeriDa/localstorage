@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {AppStateType} from "../bll/store";
 import {incValueAC} from "../bll/counter-reducer";
 
-export const Counter5 = () => {
+export const Counter567 = () => {
 
    const value = useSelector<AppStateType, number>(state => state.counter.value)
    const dispatch = useDispatch()

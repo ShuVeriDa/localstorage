@@ -1,45 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import './App.css';
+import {Counter4} from "./WithoutRedux/Lesson 4/Counter4";
+import {Counter123} from "./WithoutRedux/Lesson 1-3/Counter123";
+import {Counter5} from "./WithRedux/lesson 5/Counter5";
 
 function App() {
-   const [value, setValue] = useState<number>(0)
-
-   const incHandler = () => {
-      setValue(value + 1)
-   }
-
-   const setToLocalStorageHandler = () => {
-      localStorage.setItem('counterValue', JSON.stringify(value))
-      localStorage.setItem('removeValue', JSON.stringify(value + 1))
-   }
-
-   const getFromLocalStorageHandler = () => {
-      let valueAsString = localStorage.getItem('counterValue')
-      if (valueAsString) {
-         let newValue = JSON.parse(valueAsString)
-         setValue(newValue)
-      }
-   }
-
-   const clearLocalStorageHandler = () => {
-      localStorage.clear()
-      setValue(0)
-   }
-
-   const removeItemFromLocalStorageHandler = () => {
-      localStorage.removeItem('removeValue')
-   }
 
    return (
       <div className="App">
-
-         <h1>Localstorage</h1>
-         <h3>{value}</h3>
-         <button onClick={incHandler}>inc</button>
-         <button onClick={setToLocalStorageHandler}>setToLocalStorage</button>
-         <button onClick={getFromLocalStorageHandler}>getFromLocalStorage</button>
-         <button onClick={clearLocalStorageHandler}>clearLocalStorage</button>
-         <button onClick={removeItemFromLocalStorageHandler}>removeItemFromLocalStorage</button>
+         {/*<Counter123 />*/}
+         {/*<Counter4 />*/}
+         <Counter5 />
       </div>
    );
 }
